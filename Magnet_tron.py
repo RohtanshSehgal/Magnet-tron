@@ -45,7 +45,7 @@ def torr_bot(update, context):
             return f"NAME::{self.name}\nSIZE::{self.size}\nTYPE::{self.type}"
 
     search = update.message.text
-    url = "URL"
+    url = "https://api.sumanjay.cf/torrent/?query="
     r = requests.get(url + search)
     answer = r.text
     jsondata = json.loads(answer)
