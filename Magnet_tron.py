@@ -45,7 +45,7 @@ def torr_bot(update, context):
             return f"NAME::{self.name}\nSIZE::{self.size}\nTYPE::{self.type}"
 
     search = update.message.text
-    url = "https://api.sumanjay.cf/torrent/?query="
+    url = "URL"
     r = requests.get(url + search)
     answer = r.text
     jsondata = json.loads(answer)
@@ -74,7 +74,7 @@ def main():
     # Create the Updater and pass it your bot's token.
     # Make sure to set use_context=True to use the new context based callbacks
     # Post version 12 this will no longer be necessary
-    updater = Updater("1226796937:AAFQzqujQAlnr8TWk3gGdk4F8kfc4b93J4E", use_context=True)
+    updater = Updater("Token", use_context=True)
 
     updater.dispatcher.add_handler(CommandHandler('start', start))
     updater.dispatcher.add_handler(MessageHandler(Filters.text, torr_bot))
