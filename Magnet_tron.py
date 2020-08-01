@@ -53,7 +53,7 @@ def torr_bot(update, context):
     data = []
     for item in jsondata:
         final = Processing(item["name"], item["size"],item["type"], item["url"], (item["magnet"]))
-        if item["age"] <= "10 years" and item["nsfw"] != True:
+        if not item["nsfw"]:
             final = Processing(item["name"], item["size"],item["type"], item["url"], (item["magnet"]))
             i = i + 1
             if i <= 10:
